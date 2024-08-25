@@ -1,0 +1,50 @@
+﻿@model MvcOceanpriborTz.Models.Ship
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Редактировать</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ShipID" />
+            <div class="form-group">
+                <label asp-for="ShipName" class="control-label">Название корабля</label>
+                <input asp-for="ShipName" class="form-control" />
+                <span asp-validation-for="ShipName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShipType" class="control-label">Тип корабля</label>
+                <input asp-for="ShipType" class="form-control" />
+                <span asp-validation-for="ShipType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="YearBuild" class="control-label">Год создания</label>
+                <input asp-for="YearBuild" class="form-control" />
+                <span asp-validation-for="YearBuild" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dlina" class="control-label">Длина</label>
+                <input asp-for="Dlina" class="form-control" />
+                <span asp-validation-for="Dlina" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Country" class="control-label">Страна создания</label>
+                <input asp-for="Country" class="form-control" />
+                <span asp-validation-for="Country" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Вернуться к списку</a>
+</div>
+

@@ -1,0 +1,64 @@
+﻿@model IEnumerable<MvcOceanpriborTz.Models.Ship>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Список кораблей</h1>
+
+<p>
+    <a asp-action="Create">Добавить новый корабль</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Название корабля
+            </th>
+            <th>
+                Тип корабля
+            </th>
+            <th>
+                Год создания
+            </th>
+            <th>
+                Длина
+            </th>
+            <th>
+                Страна создания
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShipID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShipName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShipType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YearBuild)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dlina)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ShipID">Редактировать</a> |
+                <a asp-action="Delete" asp-route-id="@item.ShipID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
